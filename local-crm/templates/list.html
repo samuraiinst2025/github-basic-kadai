@@ -1,0 +1,18 @@
+<!doctype html><html><body>
+<h2>顧客一覧</h2>
+<p><a href="/customers/new">新規登録</a></p>
+<table border="1" cellpadding="6">
+  <tr>
+    <th>CustomerID</th><th>利用者名称</th><th>電話</th><th>メール</th><th>編集</th>
+  </tr>
+  {% for r in rows %}
+  <tr>
+    <td>{{ r["CustomerID"] }}</td>
+    <td>{{ r["利用者名称"] }}</td>
+    <td>{{ r["連絡先（電話）"] }}</td>
+    <td>{{ r["メールアドレス"] }}</td>
+    <td><a href="{{ r['データ編集リンク'] }}">編集</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</body></html>
